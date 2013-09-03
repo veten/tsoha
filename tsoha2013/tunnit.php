@@ -10,7 +10,7 @@ $listat = $yhteys->prepare("select lista.id, lista.nimi, to_char(vuoro.pvm, 'DD.
 	lista.listan_tila > 1 order by lista.id, vuoro.pvm");
 $listat->execute();
 
-echo "<H2> Listat: </H2>";
+echo "<H2> Tuntikertymat: </H2>";
 echo "<p><table border>";
 echo "<tr>";
 echo "<td>Listan nimi</td>";

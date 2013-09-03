@@ -70,7 +70,7 @@ while ($tehty = $tehtyt->fetch()){
 	if($tehty['pvmm'] == $pvm) {
 		$tosi = true;
 		$kyselyja = $yhteys->prepare("update vuoro set alkuaika = '{$alku}', loppuaika = '{$loppu}', vuoro_kirjaimella = '{$kirjain}', 
-			tunnit = {$tunnit}, su_tunnit = {$su}, la_tunnit = {$la}, ilta_tunnit = {$ilta}, yo_tunnit = {$yo}, where id = {$tehty['id']}");
+			tunnit = {$tunnit}, su_tunnit = {$su}, la_tunnit = {$la}, ilta_tunnit = {$ilta}, yo_tunnit = {$yo} where id = {$tehty['id']}");
 		$kyselyja->execute();
 		break;
 	}

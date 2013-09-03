@@ -1,9 +1,10 @@
 <?php include("yla.php"); 
 // Listaa työntekijälle kaikki julkaistut listat kokonaisuudessaan, merkiten vuoroja kirjain lyhentein, joilla hän on. 
 ?>
-<h2>Omien tyovuorojen listaus tunti-merkinnoin</h2>
+<h2>Koko tyovuorolistan listaus kirjain-merkinnoin</h2>
 <p>Alla on listattu kaikki julkaistut tyovuorolistat, joilla olet listalla.</p>
-
+<p>Kirjaimien selitykset: A = 07:00 - 15:00, E = 07:30 - 15:30, I = 13:00 - 21:00, J = 13:15 - 21:15, Y = 21:00 - 07:15, V = vapaapaiva. 
+	* tarkoittaa, etta ko vuoro ei ole yllamainittu standardi vuoro, mutta kuuluu ko vuoron vahvuuteen.  </p>
 <?php
 include("yhteys.php");
 

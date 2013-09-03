@@ -1,7 +1,7 @@
 <?php include("yla.php"); 
 // Listaa työntekijälle kaikki julkaistut listat kokonaisuudessaan, joilla hän on. 
 ?>
-<h2>Omien tyovuorojen listaus tunti-merkinnoin</h2>
+<h2>Koko listan tyovuorojen listaus tunti-merkinnoin</h2>
 <p>Alla on listattu kaikki julkaistut tyovuorolistat, joilla olet listalla.</p>
 
 <?php
