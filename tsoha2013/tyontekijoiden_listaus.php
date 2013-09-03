@@ -1,16 +1,15 @@
+<?php include("yla.php"); ?>
+<?php include("asetuksetPalkki.php"); ?>
+
 <?php
+// Listaa kaikki järjestelmässä olevat työntekijät. Myös ne jotka eivät ole parhaillaan listalla, eli aktiivisia.
 
-----------------------
+include("yhteys.php");
 
----------------------
+$tekijat = $yhteys->prepare("select * from tekija order by listalla desc, ammatti, sukunimi");
+$tekijat->execute();
 
-$yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//$yhteys->exec("SET NAMES latin1");
-
-$kysely = $yhteys->prepare("SELECT * FROM tekija");
-$kysely->execute();
-
-echo "<H1> Tyontekijat: <H1>";
+echo "<H2> Tyontekijat: </H2>";
 echo "<table border>";
 echo "<tr>";
 echo "<td>henkilonumero</td>";
@@ -20,15 +19,28 @@ echo "<td>ammatti</td>";
 echo "<td>listalla</td>";
 echo "</tr>";
 
-while ($rivi = $kysely->fetch()) {
+while ($rivi = $tekijat->fetch()) {
+
+	if($rivi["ammatti"] == 1) {
+		$amm = 'Sairaanhoitaja';
+	} else {
+		$amm = 'Hoitaja';
+	}
+	if($rivi["listalla"] == 0) {
+		$lis = 'ei';
+	} else {
+		$lis = 'on';
+	}
     echo "<tr>";
     echo "<td>" . $rivi["henkilonumero"] . "</td>";
     echo "<td>" . $rivi["etunimi"] . "</td>";
 	echo "<td>" . $rivi["sukunimi"] . "</td>";
-	echo "<td>" . $rivi["ammatti"] . "</td>";
-	echo "<td>" . $rivi["listalla"] . "</td>";
+	echo "<td>" . $amm . "</td>";
+	echo "<td>" . $lis . "</td>";
     echo "</tr>";
 }
 echo "</table>";
 
 ?>
+
+<?php include("ala.php"); ?>

@@ -1,4 +1,55 @@
+body {
+	background-color: rgb(250, 250, 250);
+}
+
+.grey {
+	background-color: lightgrey;
+}
+
 .red {
 	color: rgb(255, 0, 0);
 	font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.palkki, .kirj {
+	background-color: lightgrey;
+	
+    padding: 1em;
+    width: 75%;
+
+    /* pyöreät kulmat -- useampi määrittely sillä tyylispesifikaatio vielä kesken */
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.kirj {
+    width: 40%;
+}
+
+.hehku {
+	background-color: lightgrey;
+    padding: 1em;
+
+}
+
+.hehku2 {
+	background-color: pink;
+    padding: 1em;
+
+}
+
+
+.hehkuva {
+	background-color: lightgreen;
+    padding: 1em;
+
+}
+
+.sininen {
+	color: blue;
 }
